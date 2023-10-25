@@ -3,7 +3,7 @@ const display=document.querySelector("#displayInput");
 const botaoIgual=document.querySelector(".igual");
 const botaoPonto=document.querySelector(".ponto");
 const botoesNumeros=document.querySelectorAll(".num");
-const botoesOperadores=document.querySelectorAll(".igual");
+const botoesOperadores=document.querySelectorAll(".operador");
 
 //variáveis globais (estados na calculadora)
 let operacaoAtual="";
@@ -24,13 +24,13 @@ function insereNumero(evento){
     }
     atualizaDisplay();
 }
-function inserePonto(){
+const inserePonto = ()=>{
     if(operacaoAtual.indexOf(".")===-1){
         operacaoAtual+=".";
         atualizaDisplay();
     }
 }
-function insereOperador(evento){
+const insereOperador=(evento)=>{
     if(operacaoAtual!==""){
         if(calculando){
             if(operador!==null){
